@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scatter Plot with Brushing - D3.js</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        
+.brushed {
+    fill: black;
+    stroke: #fefefe;
+    opacity: 1.0;
+  }
+  
+  .non_brushed {
+    fill: #40e437;
+    opacity: 0.8;
+  }
+    </style>
+<body style="background-color: black">
+
+<div id="scatterid">
+
+</div>
+
+
+</body>
+
+<script>
+    var data = []
+d3.csv("./viz.csv", function(data) {
+
+    return data = {x: parseInt(data.year), y: parseFloat(data.valence)}
+
+}).then(function(d){
+    plotScatterplot(d)
+});
+
+
+</script>
+<script src="../js/scatterplot.js"></script>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Analysis Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   
+    <link href="../static/css/style.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25+Charted&family=Noto+Znamenny+Musical+Notation&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col heading-col dashboardElement">
+                <h1 class="text-center align-self-center">[ GROUP-45 ] Spotify Music Wellness Index: Analysis for Positive Mental Well-being</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-md-6 dashboardElement">
+                                <div class="border bar-pie screeCol">
+                                    <div id="barchart">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 dashboardElement">
+                                <div class="border bar-pie elbowCol">
+                                    <div id="piechart">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 dashboardElement">
+                        <div class="border global-graph biPlotCol">
+                            <div class="slider" style="position:absolute;margin-left:5.5%;margin-top:50%;">
+
+                                <label for="customRange1" class="form-label">Zoom</label>
+                                <input type="range" min="1" max="4" value="3" class="form-range slider" style="  accent-color: #3edc36;" id="zoom-slider">
+                            </div>
+                            <div id="geomap">
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-10 dashboardElement">
+                        <div class="border scatterCol">
+                            <div id="scatterid">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ATTR START -->
+                    
+                    <div class="col-md-2">
+                        <div class="row">
+                            <div class="col-md-12 dashboardElement">
+                                <table class="table table-bordered attributeTable topRes">
+                                    <thead>
+                                        <tr class="topHead">
+                                            <!-- <th class="text-center"> -->
+
+                                              <img src="static/spotify.png" style="height: 100px;margin-left:10px;">
+
+                                            <!-- </th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody id="attributeTableBody">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 dashboardElement">
+                                <table class="table table-bordered topRes">
+                                    <thead>
+                                        <tr class="tableRow2">
+                                            <th class="text-center">Year</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center align-self-center diValue" id="tp_year">1999-2020</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 dashboardElement">
+                                <table class="table table-bordered topRes">
+                                    <thead>
+                                        <tr class="tableRow2">
+                                            <th class="text-center">Country</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center align-self-center diValue" id="tp_country">World</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    <!-- ATTR END -->
+
+
+
+
+
+
+
+
+                    <div class="col-md-10 dashboardElement">
+                        <div class="border scatterCol">
+                            <div id="areachart">
+                    
+                            </div>
+                        </div>
+                    </div>
+          
+                      <!-- ATTR START -->
+                    
+                      <div class="col-md-2">
+                        <div class="row">
+                            <div class="col-md-12 dashboardElement">
+                                <table class="table table-bordered topRes">
+                                    <thead>
+                                        <tr class="tableRow2">
+                                            <th class="text-center">Artists</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center align-self-center diValue" id="tp_artists">319</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 dashboardElement">
+                                <table class="table table-bordered topRes">
+                                    <thead>
+                                        <tr class="tableRow2">
+                                            <th class="text-center">Songs</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center align-self-center diValue" id="tp_songs"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 dashboardElement">
+                                <table class="table table-bordered topRes">
+                                    <thead>
+                                        <tr class="tableRow2">
+                                            <th class="text-center reset" style="border-radius: 10%;cursor:pointer;" onclick="reset()">reset</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <!-- <td class="text-center align-self-center diValue">
+                                                <button style="width: 100%;height:50px"></button>
+                                            </td> -->
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    <!-- ATTR END -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    // Scatter
+    var scatter_years = {start: 1999, end: 2020}
+    var country = [];
+    var artist;
+    var genre;
+    d3.csv("../static/data/viz.csv", function(data) {
+    
+        return data = {x: parseInt(data.year), y: parseFloat(data.valence)}
+    
+    }).then(function(d){
+        plotScatterplot(d)
+    });
+
+    function get_unique_artists(year1=null,year2=null,country=null)
+    {
+        d3.csv('../static/data/viz.csv').then(function(data) {
+ 
+            if(year1 && year2)
+            {
+                console.log("HEY1",year1,year2)
+                data = data.filter(d => d.year >= year1 && d.year <= year2);
+                console.log(data)
+            }
+            if(country)
+            {
+                console.log("HEY",country)
+                data = data.filter(d => d.Country == country);
+                console.log(data)
+
+            }
+            // Extract unique artists
+            uniqueArtists = [...new Set(data.map(d => d.artist))];
+            //console.log(uniqueArtists.length);
+            songsCount = 0
+            uniqueArtists.map(
+                d=>{
+            
+                    data.map(dd=>{
+                    
+                        if(dd.artist==d)
+                        {
+                            songsCount=songsCount+1;
+                        }
+                    })
+                }
+            )
+            document.getElementById("tp_artists").innerHTML=uniqueArtists.length;
+            document.getElementById("tp_songs").innerHTML=songsCount;
+        });
+    }
+
+    function reset()
+    {
+        console.log("RESET")
+        scatter_years = {start: 1999, end: 2020}
+        document.getElementById("zoom-slider").value=4;
+        country=[]
+        document.getElementById("scatterid").innerHTML="";
+        document.getElementById("geomap").innerHTML="";
+        document.getElementById("piechart").innerHTML="";
+        document.getElementById("areachart").innerHTML="";
+        document.getElementById("tp_year").innerHTML=scatter_years.start.toString()+"-"+scatter_years.end.toString();
+        document.getElementById("tp_country").innerHTML="World";
+        document.getElementById("barchart").innerHTML="";
+        d3.csv("../static/data/viz.csv", function(data) {
+    
+            return data = {x: parseInt(data.year), y: parseFloat(data.valence)}
+        
+        }).then(function(d){
+            plotScatterplot(d)
+        });
+        createGeoMap(null,null); 
+        drawAreaChart();
+        drawPieChart();
+        drawBarChartByYear();
+        get_unique_artists();
+
+    }
+    get_unique_artists();
+
+
+
+
+
+</script>
+<script src="../static/js/scatterplot.js"></script>
+<script src="../static/js/geomap.js"></script>
+<script src="../static/js/piechart.js"></script>
+<script src="../static/js/barchart.js"></script>
+<script src="../static/js/areachart.js"></script>
+</html>

@@ -1,0 +1,215 @@
+.bar-pie {
+    height: 35vh;
+    margin: 5px;
+    padding: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 1.5%;
+    background-color: #202020;
+}
+
+.global-graph {
+    height: 56vh;
+    margin: 5px;
+    padding: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 1.5%;
+    background-color: #202020;
+}
+
+.topRes {
+    margin: 5px  ;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    color: #fefefe;
+}
+
+.border {
+    border: 1px solid #121212 !important;
+}
+
+body {
+    background-color: black;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    overflow: hidden;
+    color: white;
+}
+
+.scatterCol {
+    height: 45vh;
+    margin: 5px  ;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 1.5%;
+    background-color: #202020;
+}
+
+.heading-col {
+    max-height: 6vh;
+    background-color: black;
+    color: #1ccb5b;
+    font-family: "Jersey 25 Charted", sans-serif;
+    /* font-family: "Noto Znamenny Musical Notation", sans-serif; */
+}
+
+.dashboardElement {
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.topHead {
+    /* background-color: #1ccb5b;
+    color: #fefefe; */
+    background-color: #121212;
+    color: #1ccb5b;
+    
+    border: 2px solid #121212 !important;
+    border-bottom: 2px solid #121212 !important;
+    
+}
+
+.diValue{
+    background-color: #202020;
+
+}
+
+
+.tableRow2 {
+    background-color: #1ccb5b;
+    color: #fefefe;
+}
+
+
+.table-bordered{
+    border: 2px solid #121212 !important;
+    border-bottom: 2px solid #121212 !important;
+    margin-left: -0.1%;
+    margin-top: 5%;
+}
+.table thead th{
+    
+    border-bottom: 2px solid #121212 !important;
+}
+
+.brushed {
+    fill: black;
+    stroke: #fefefe;
+    opacity: 1.0;
+  }
+  
+  .non_brushed {
+    fill: #40e437;
+    opacity: 0.8;
+  }
+
+  #scatterid{
+    margin-left: 2%;
+    margin-top: -1.5%;
+    align-self: center;
+    cursor: pointer;
+  }
+#geomap{
+    z-index: -10;
+    margin-top: -10%;
+    margin-left: -5%;
+    cursor: pointer;
+    overflow: hidden;
+
+}
+  .geotooltip {
+    position: absolute;
+    text-align: left;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    font: 12px sans-serif;
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0.9;
+    z-index: 10;
+  }
+.reset{
+    background-color: rgb(202, 43, 43);
+}
+
+#piechart
+{
+    cursor: pointer;
+    margin-top: -29%;
+    margin-left: -15%;
+}
+.pie-tooltip {
+    position: absolute;
+    text-align: left;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    font: 12px sans-serif;
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0.9;
+    z-index: 10;
+}
+
+#barchart
+{   
+    cursor: pointer;
+
+    margin-left: -5%;
+}
+#areachart
+{
+    cursor: pointer;
+}
+.bartooltip {
+    position: absolute;
+    text-align: left;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    font: 12px sans-serif;
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0.9;
+    z-index: 10;
+}
+
+.areatooltip {
+    position: absolute;
+    text-align: left;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    font: 12px sans-serif;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0.9;
+    z-index: 10;
+    color: black;
+}
+
+
+/* Custom slider color */
+.slider input[type="range"]::-webkit-slider-thumb {
+    background: #28a745; /* Green */
+}
+
+.slider input[type="range"]::-moz-range-thumb {
+    background: #28a745; /* Green */
+}
+
+.slider input[type="range"]::-ms-thumb {
+    background: #28a745; /* Green */
+}
